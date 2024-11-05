@@ -16,6 +16,11 @@ public class CityController {
           return ResponseEntity.ok(cityService.findCityByName(name)) ;
     }
 
+    @GetMapping("/")
+    public ResponseEntity greet(){
+       return  ResponseEntity.ok("Welcome ") ;
+    }
+
     @GetMapping("/city")
     public ResponseEntity getAllcities(){
         return ResponseEntity.ok(cityService.fingAllCities()) ;
@@ -23,10 +28,10 @@ public class CityController {
 
     @PostMapping("/city")
     public ResponseEntity createCity(@RequestBody CityDTO cityDTO ){
-        cityService.createCityByName(cityDTO.getName()) ;
-         return null ;
+         return ResponseEntity.ok(cityService.createCityByName(cityDTO.getName())) ;
     }
 
+    @DeleteMapping
     public ResponseEntity deleteCity(@PathVariable int id){
         boolean val =cityService.deleteCityById(id) ;
         return ResponseEntity.ok(val) ;
