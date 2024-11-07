@@ -13,4 +13,11 @@ public class Seat extends BaseModel {
     private int col ;
     private int seatNumber ;
     private SeatType seatType ;
+
+    public Seat(int row, int col, int seatNumber, SeatType seatType ){
+        this.row=row ;
+        this.col=col ;
+        this.seatNumber=seatNumber ;
+        this.seatType=seatType ;
+    }
 }
